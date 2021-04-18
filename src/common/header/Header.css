@@ -1,0 +1,36 @@
+.header {
+    flex: 1;
+    display: flex;
+    flexDirection: 'column';
+    height: 56px;
+    text-align: center;
+    background: #222;
+    padding-top: 8px;
+    padding-right: 32px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    margin: 15px;
+
+}
+
+
+.logostyle{
+    background: #ff7f7f;
+    height: 35px;
+    width: 35px;
+}
+
+
+.loginButtonStyle{
+    alignSelf: 'flex-end'
+}
+
+.container {
+    flex: 1;
+}
+
+.parent {
+    flex: 1;
+    flexDirection: 'row';
+    justifyContent: 'space-around';
+}
