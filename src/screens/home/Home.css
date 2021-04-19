@@ -1,0 +1,13 @@
+
+
+.coupon-container {
+    display: flex;
+    background: #ff9999;
+    padding: 8px;
+    alignment: center;
+    font-size: 1rem;
+}
+
+.confirmLeft {
+    width: 40%
+}

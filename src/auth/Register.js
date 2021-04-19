@@ -118,8 +118,10 @@ function Register(pros) {
 
         callObservable(doRegisterUser(payload),(response)=>{
 
-            const currentUser = response.user
-            const token = response.token
+            const currentUser = response.id
+            const token = response.status
+
+            alert(`Succesfully Registered"`);
 
            // appNotification.showSuccess("Succesfully Registered")
             dispatch({type: LOGIN, "payload": response});

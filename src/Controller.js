@@ -17,7 +17,8 @@ const Controller = () => {
 
 
         <Router>
-            <div className="main-container">
+            <div>
+
                 <Route exact path="/" render={(props) => <Home {...props} baseUrl={baseUrl} historyVal={props.history}/>}/>
 
                 <Route exact path="/login_register_tab" render={(props) => <FullWidthTabs {...props} baseUrl={baseUrl} historyVal={props.history}/>}/>

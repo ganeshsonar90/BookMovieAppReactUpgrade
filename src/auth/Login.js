@@ -63,7 +63,7 @@ function Login(props) {
 
 
 
-
+/*
     async function login(event) {
         event.preventDefault();
         console.log("userName",userName)
@@ -75,7 +75,7 @@ function Login(props) {
 
         const loginUrl = props.baseUrl +"/auth/login"
 
-environment.isLoggedIn=true;
+/!*environment.isLoggedIn=true;
         doLogin( payload)
             .subscribe( (response) =>{
 
@@ -91,11 +91,44 @@ environment.isLoggedIn=true;
 
 
             },(error => {
-               /* appNotification.showError(error )*/
+               /!* appNotification.showError(error )*!/
 
 
-            }))
+            }))*!/
+    }*/
+
+    async function login(event) {
+        event.preventDefault();
+        const loginUrl = environment.baseUrl +"/auth/login"
+        const param = window.btoa(`${userName.value}:${password.value}`);
+        try {
+            const rawResponse = await fetch(loginUrl, {
+                method: 'POST',
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json;charset=UTF-8",
+                    authorization: `Basic ${param}`
+                }
+            });
+
+            const result = await rawResponse.json();
+            if(rawResponse.ok) {
+              //  window.sessionStorage.setItem('user-details', JSON.stringify(result));
+               // window.sessionStorage.setItem('access-token', rawResponse.headers.get('access-token'));
+
+                alert(`Succesfully Login"`);
+
+               // window.location.href = './boards.html';
+            } else {
+                const error = new Error();
+                error.message = result.message || 'Something went wrong.';
+            }
+        } catch(e) {
+            alert(`Error: ${e.message}`);
+        }
     }
+
+
 
     return (
         <Container component="main" maxWidth="xs">

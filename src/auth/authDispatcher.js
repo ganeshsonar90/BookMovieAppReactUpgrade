@@ -40,10 +40,12 @@ export const doRegisterUser = (registerRequest) => {
             concatMap((response) => {
 
 
-                const loginRequest = {};
+                return response;
+
+               /* const loginRequest = {};
                 loginRequest.userName = registerRequest.userName;
                 loginRequest.password = registerRequest.password;
-                return doLogin(loginRequest);
+                return doLogin(loginRequest);*/
             })
         );
 }
