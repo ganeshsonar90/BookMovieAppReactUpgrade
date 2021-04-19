@@ -3,6 +3,7 @@ import Header from "../../common/header/Header";
 import {Typography} from "../../component";
 import {Grid} from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
+import './Home.css';
 
 const Home = (props) => {
 
@@ -11,17 +12,12 @@ const Home = (props) => {
         <div>
             <Header baseUrl={props.baseUrl} historyVal={props.historyVal}/>
 
-
-            <div className="coupon-container">
-                <div className="confirmLeft">
-                    <Typography>Upcoming Movies</Typography>
-                </div>
-
+            <div className="upcoming_container">
+<Typography>Upcoming Movies</Typography>
             </div>
 
 
-
-        </div>
+            </div>
     );
 
 };

@@ -1,11 +1,9 @@
 
 
-.coupon-container {
-    display: flex;
-    background: #ff9999;
+.upcoming_container {
     padding: 8px;
-    alignment: center;
-    font-size: 1rem;
+    text-align: center;
+    background: #ff9999;
 }
 
 .confirmLeft {

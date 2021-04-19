@@ -1,8 +1,7 @@
 .header {
     flex: 1;
     display: flex;
-    flexDirection: 'column';
-    height: 56px;
+    height: 66px;
     text-align: center;
     background: #222;
     padding-top: 8px;
@@ -20,17 +19,39 @@
     width: 35px;
 }
 
+.buttonstylelogin{
+    margin-left: 10px;
+}
 
-.loginButtonStyle{
-    alignSelf: 'flex-end'
+
+.bookshowcontainer{
+    flex: 1;
+    align-items: flex-end;
 }
 
 .container {
-    flex: 1;
+    display: flex;
+    flex-direction:row;
+
+
 }
 
 .parent {
     flex: 1;
     flexDirection: 'row';
     justifyContent: 'space-around';
+}
+
+.d-flex div{
+    padding: 1rem;
+    background-color: #33b5e5;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+}
+
+.aParent div {
+    float: right;
+    clear: none;
+    margin-top: 0px;
 }

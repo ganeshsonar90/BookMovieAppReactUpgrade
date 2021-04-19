@@ -20,7 +20,7 @@ const Header = (props) => {
     //const history=useHistory();
    // const {user, token, isLoggedIn, roles} = useSelector(state => state.auth);
    // const isLoggedIn=true;
-    const isToShowBookShow=true;
+    const isToShowBookShow=false;
 
     const loginButtonHandler = () => {
 
@@ -52,12 +52,16 @@ const Header = (props) => {
 
 
     return (
+
+        <div>
+
+
+
         <div className="header">
 
             <div style={{
                 flex: 1,
                 flexDirection: 'row',
-                justifyContent: 'space-around'
             }}>
 
                 <div className="logostyle">
@@ -68,79 +72,65 @@ const Header = (props) => {
 
 
 
-                    {  (isToShowBookShow) ? <div  style={{
-                            flex: 1
-                        }} >
-                            <div style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                justifyContent: 'space-around'
-                            }}>
-                        <div className="loginButtonStyle">
-                            <Button
-                                id="btnbookshow"
-                                variant="contained"
-                                onClick={bookshowButtonHandler}
-                                color="primary"
-                                style={{
-                                    right: 25,
-                                    top: 1,
-                                }}
-
-                            >
-                                Book Show
-                            </Button>
+                    {  (isToShowBookShow) ?
+                        <div className="aParent">
 
 
-                        </div>
+                            <div>
 
 
+                                <div>
+                                    {(environment.isLoggedIn) ?
+                                        <div >
+                                            <Button className="buttonstylelogin"
+                                                id="btnlogout"
+                                                variant="contained"
+                                                onClick={logoutButtonHandler}
+                                                color="default"
+
+                                            >
+                                                Logout
+                                            </Button>
 
 
+                                        </div> : <div>
+                                            <Button
+                                                id="btnlogin"
+                                                variant="contained"
+                                                onClick={loginButtonHandler}
+                                                color="default"
 
-                        {(environment.isLoggedIn) ?
-                            <div className="loginButtonStyle">
-                                <Button
-                                    id="btnlogout"
-                                    variant="contained"
-                                    onClick={logoutButtonHandler}
-                                    color="default"
-                                    style={{
-                                        position: 'absolute',
-                                        right: 25,
-                                        top: 25,
-                                    }}
-                                >
-                                    Logout
-                                </Button>
+                                            >
+                                                Login
+                                            </Button>
 
 
-                            </div> : <div className="loginButtonStyle">
-                                <Button
-                                    id="btnlogin"
-                                    variant="contained"
-                                    onClick={loginButtonHandler}
-                                    color="default"
-                                    style={{
-                                        position: 'absolute',
-                                        right: 25,
-                                        top: 25,
-                                    }}
-                                >
-                                    Login
-                                </Button>
+                                        </div>
+                                    }
+
+                                </div>
 
 
+                                <div>
+                                    <Button
+                                        id="btnbookshow"
+                                        variant="contained"
+                                        onClick={bookshowButtonHandler}
+                                        color="primary"
+                                    >
+                                        Book Show
+                                    </Button>
+
+
+                                </div>
                             </div>
-                    }
 
-
-                        </div>
 
                         </div>
 
 
                     :
+
                   <div >  {  (environment.isLoggedIn) ?
                         <div className="loginButtonStyle">
                         <Button
@@ -196,6 +186,8 @@ const Header = (props) => {
 
 
         </div>
+        </div>
+
         </div>
     )
 };
