@@ -1,5 +1,8 @@
 
-
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
 .upcoming_container {
     padding: 8px;
     text-align: center;
@@ -9,3 +12,38 @@
 .confirmLeft {
     width: 40%
 }
+
+
+/* Column container */
+.row {
+    display: flex;
+    margin: 0px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 76%;
+    padding: 20px;
+}
+
+/* Main column */
+.main {
+    flex: 24%;
+    padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+

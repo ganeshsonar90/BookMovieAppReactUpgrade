@@ -1,13 +1,9 @@
-import React,{useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
 import {environment} from "../../environment";
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function TitlebarGridList() {
 
+export default function TitlebarGridListVertical() {
 
     const [movieList,setMovieList] = useState([]);
 
@@ -63,7 +59,7 @@ export default function TitlebarGridList() {
                     "id": "string",
                     "poster_url": "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
                     "rating": 0,
-                    "release_date": "string",
+                    "release_date": "Tue Aug 13 2020",
                     "status": "PUBLISHED",
                     "storyline": "string",
                     "title": "WaterBoy",
@@ -90,7 +86,7 @@ export default function TitlebarGridList() {
                     "id": "string",
                     "poster_url": "https://homepages.cae.wisc.edu/~ece533/images/cat.png",
                     "rating": 0,
-                    "release_date": "string",
+                    "release_date": "Fri Jul 15 2020",
                     "status": "PUBLISHED",
                     "storyline": "string",
                     "title": "BatMan",
@@ -105,7 +101,7 @@ export default function TitlebarGridList() {
         console.log("Response",mockData.movies);
 
        // setMovieList(data.movies);
-        setMovieList(mockData.movies);
+         setMovieList(mockData.movies);
         //fetch("http://localhost:7081/api/contacts")
         // .then(input=>input.json())
         // .then(data=>setMovieList(data))
@@ -120,21 +116,21 @@ export default function TitlebarGridList() {
 
 
 
-
-
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            <GridList className={classes.gridList} cols={2.5} cellHeight="250">
+            <GridList cellHeight={350} className={classes.gridList} cols={4}>
+
                 {movieList.map((movieItem) => (
                     <GridListTile key={movieItem.id}>
-                        <img src={movieItem.poster_url}  />
+                        <img src={movieItem.poster_url} alt={movieItem.title} />
                         <GridListTileBar
                             title={movieItem.title}
+                            subtitle={<span>Release Date: {movieItem.release_date}</span>}
+
                         />
                     </GridListTile>
-
                 ))}
             </GridList>
         </div>
